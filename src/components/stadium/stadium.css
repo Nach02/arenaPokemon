@@ -11,7 +11,8 @@
 
 .batallaPokemon{
     background-image: url('../../img/estadio1.jpg');
-
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 94%;
     position: absolute;
     top:2rem;    

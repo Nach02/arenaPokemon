@@ -42,7 +42,7 @@ function Stadium(){
     }else{
         return (
             <div  className="batallaPokemon">  
-            <img   ></img>    
+            <img></img>    
                 <div>
                     <h2 style={{textAlign: "center"}}>Batalla pokemon</h2>
                     <Turns/>
