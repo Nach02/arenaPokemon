@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 14rem;
+    top: 17rem;
     left: 9rem;
     background-color: darkblue;
     opacity: 0.8;
@@ -192,7 +192,7 @@ transition: all 1s;
 }
 .imagenplayer1{
     position: relative;
-    top: 3.6rem;
+    top: 6rem;
     width: 8rem;
     height: 10rem;
     left:1rem
