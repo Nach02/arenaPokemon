@@ -1,0 +1,41 @@
+#event{
+    position: absolute;
+    width: 0rem;
+    height: 11rem;
+    top: -16rem;
+    left: -11rem;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    z-index: 1000;
+} 
+ #event.fadeataque1{
+     display:flex;
+     opacity: 1;
+     left: -11rem;
+     width: 22rem;
+     background-image: url("../../img/fire-51.gif");
+     /* background: tomato; */
+} 
+#event.fadeataque2{
+    display:flex;
+    opacity: 1;
+    left: -11rem;
+    width: 22rem;
+    background: green;
+}
+
+ #event.fadedaño1{
+    display:flex;
+    opacity: 1;
+    left: -11rem;
+    width: 22rem;
+    background: yellow;
+}
+
+#event.fadedaño2{
+    display:flex;
+     opacity: 1;
+     left: -11rem;
+     width: 22rem;
+    background: blue;
+}

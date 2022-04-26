@@ -1,0 +1,30 @@
+.seleccion{    
+    position: relative;
+    display: flex;
+    width: 2rem;
+    left: 35rem;
+    top: 2rem;
+    flex-direction: column;
+
+}
+.titulo{
+    position: relative;
+    left: 20.5rem;
+    width: 6rem;
+
+}
+.listado{    
+    display: flex;
+    position: relative;
+    width: 17rem;
+    left: 15rem;
+    justify-content: space-evenly;
+    border: 2px solid red;
+    border-radius: 11%;
+}
+.btn2{
+    position: relative;
+    top: 1rem;
+    left: 15rem;
+    width: 18rem;
+}

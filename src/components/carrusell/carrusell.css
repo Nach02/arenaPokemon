@@ -1,0 +1,146 @@
+.carrousel{    
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top:1rem;
+    left:1rem;
+}
+.card3 > img{
+    pointer-events: none;
+}
+.card3 > p{
+    pointer-events: none;
+}
+.btnright{
+    height: 2rem;
+    border-radius: 50%;
+    width: 2rem;
+    position: relative;
+    top: 20rem;
+    left: 26rem;
+    z-index: 1000;
+    cursor: pointer;
+        
+}
+.btnleft{
+    height: 2rem;
+    border-radius: 50%;
+    width: 2rem;
+    position: relative;
+    top: 20rem;
+    left: 17rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+.card1{
+    background-color: white;
+    position: absolute;
+    top: 15.5rem;
+    left: 4rem;
+    height: 10rem;
+    color: black;
+    width: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    font-size: 0.6rem;
+    pointer-events: none;
+
+}
+.card2{
+    background-color: white;
+    position: absolute;
+    top: 13rem;
+    left: 11rem;
+    height: 15rem;
+    color: black;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    font-size: 0.9rem;
+    opacity: 0.6;   
+    pointer-events: none;
+}
+.card2 img{    
+    width: 4rem;
+    height: 4rem;
+    transition: all 1s ease-in-out;
+}
+.card3{
+    background-color: white;
+    position: absolute;
+    top: 11.5rem;
+    left: 19.5rem;
+    height: 19rem;
+    color: black;
+    width: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in-out; 
+    border-radius: 2rem;   
+    pointer-events:all;
+}
+.card3 img{    
+    width: 7rem;
+    height: 7rem;
+    transition: all 1s ease-in-out;
+}
+.card4{
+    background-color: white;
+    position: absolute;
+    top: 13rem;
+    left: 30rem;
+    height: 15rem;
+    color: black;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    font-size: 0.9rem;  
+    opacity: 0.6; 
+    pointer-events: none;
+}
+.card4 img{    
+    width: 4rem;
+    height: 4rem;
+    transition: all 1s ease-in-out;
+}
+.card5{
+    background-color: white;
+    position: absolute;
+    top: 15.5rem;
+    left: 39rem;
+    height: 10rem;
+    color: black;
+    width: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    font-size: 0.6rem;
+    pointer-events: none;
+    
+}
+.pantalla1{
+    position: relative;
+    left: 0.4rem;
+    background-color: black;
+    height: 17rem;
+    width: 10.5rem;
+    z-index: 2;
+}
+.pantalla2{
+    position: relative;
+    left: 0.4rem;
+    background-color: black;
+    height: 17rem;
+    width: 10.5rem;
+    z-index: 2;
+}

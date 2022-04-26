@@ -1,0 +1,259 @@
+
+.pokemon{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+.player1{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+.player2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+#player1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 14rem;
+    left: 9rem;
+    background-color: darkblue;
+    opacity: 0.8;
+    border-radius: 31%;
+    height: 160px;
+    font-size: 9px;
+}
+#player2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 14.5rem;
+    left: -7rem;
+    background-color: darkblue;
+    opacity: 0.8;
+    border-radius: 31%;
+    height: 160px;
+    font-size: 9px;
+}
+.a{
+    position: relative;
+    top:200%;
+    left:8%;
+    font-size: 2rem;
+    color: black;
+}
+.w{
+    position: relative;
+    top:92%;
+    left:28%;
+    font-size: 2rem;
+    color: black;
+    
+}
+.s{
+    position: relative;
+    top:185%;
+    left:30%;
+    font-size: 2rem;
+    color: black;
+    
+}
+.d{
+    position: relative;
+    top:72%;
+    left:51%;
+    font-size: 2rem;
+    color: black;
+    
+}
+
+#input{
+    position: relative;
+    top:-5rem;
+    left:-15rem;
+    opacity: 1;
+}
+#input2{
+    opacity: 0;
+}
+.botonesplayer1{
+    position: relative;
+    left: -120%;
+    top: -7.5rem;
+    height: 10rem;
+    padding: 0rem 0rem 2rem 0rem;
+    z-index: 0;
+}
+.botonesplayer2{
+    position: relative;
+    left: 110%;
+    top: -7.5rem;
+    height: 10rem;
+    padding: 0rem 0rem 2rem 0rem;
+    z-index: 0;
+}
+.stats{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0rem;
+    left: -4rem;
+}
+#ataque1{
+    position: relative;
+    top: -6rem;
+    left: -6rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-end;  
+    z-index: 0;
+}
+#pataque1{
+    position: relative;
+    top: -6rem;
+    left: -6rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-end;  
+    z-index: 0;
+}
+#ataque2{
+    position: relative;
+    top: -12rem;
+    left: 4rem;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+}
+#pataque2{
+    position: relative;
+    top: -13.3rem;
+    left: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+}
+#ataque3{
+    position: relative;
+    top: -10rem;
+    left: 8rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+}
+#pataque3{
+    position: relative;
+    top: -12rem;
+    left: 8rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+}
+#ataque4{
+    position: relative;
+    top: -7rem;
+    left: 4rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+}
+#pataque4{
+    position: relative;
+    top: -10rem;
+    left: 3rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+}
+.tituloplayer1{
+    position: relative;
+    top: -3rem;
+    left: 0.5rem;
+
+}
+.tituloplayer2{
+    position: relative;
+    top: -3rem;
+    left: 0rem;
+    
+}
+progress{
+transition: all 1s;    
+}
+.imagenplayer1{
+    position: relative;
+    top: 3.6rem;
+    width: 8rem;
+    height: 10rem;
+    left:1rem
+}
+.imagenplayer2{
+    position: relative;
+    top:3.8rem;
+    width: 8rem;
+    height: 9.5rem;  
+}
+.controlesplayer1{
+    width: 8rem;
+    height: 8rem;
+}
+.controlesplayer2{
+    width: 8rem;
+    height: 8rem;    
+}
+.displayplayer1{
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    flex-direction: column;
+    width: 150px;
+    padding: 0px;
+    background: mediumblue;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.displayplayer2{
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    left: 30rem;
+    flex-direction: column;
+    width: 150px;
+    padding: 0px;
+    background: mediumblue;
+    opacity: 0.8;
+}
+.attacksContainer{
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s;
+    height: 0px;
+    background-color: lightseagreen;
+    width: 149px;
+    padding: 0;
+    left: -11px;
+}
+.pokemonsContainer{
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s;
+    height: 0px;
+    background-color: lightseagreen;
+    width: 149px;
+    padding: 0;
+    left: -11px;
+}
+.menu{
+    margin:12px
+}

@@ -1,0 +1,20 @@
+.escenario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.x{
+    position: relative;
+    top: 17rem;
+}
+
+.batallaPokemon{
+    background-image: url('../../img/estadio1.jpg');
+
+    height: 94%;
+    position: absolute;
+    top:2rem;    
+    width: 96%;
+    left:2%
+}

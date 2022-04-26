@@ -1,0 +1,8 @@
+#turnos{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+}
+#turnos.change{
+    left: 60%;
+}
