@@ -1,4 +1,5 @@
 import { GET_ATTACKS,SUMA,RESTA,CHANGE_STATUS,DESELECT_POKEMON,SELECT_POKEMON,CHANGE_TURN,ATTACK,GET_POKEMONS,GET_POKE_DETAILS } from "./Actions";
+import Swal from 'sweetalert';
 const initialState={
   
     pokemones:[],//lista de pokemones con detalles
@@ -43,17 +44,34 @@ const RootReducer=(state=initialState,action)=>{
             }
         case SELECT_POKEMON:
             
-            if(state.player1Pokemons.length>2){return {...state}}
+            if(state.player1Pokemons.length>2){
+                Swal({
+                    icon: "error",
+                    title: `you can select only three pokemons`,
+                    button: false,
+                    heightAuto: false,
+                    timer: 3000,
+                    })
+                return {...state}
+            }
             else{
                 
                 var [newPokemon]=state.pokemones.filter((p)=>p.name===action.payload)
                 if(state.player1Pokemons.includes(newPokemon)){
-                    newPokemon.order=250+Math.random()
+                    Swal({
+                        icon: "error",
+                        title: `that Pokemon has been all ready selected, please select another one`,
+                        button: false,
+                        heightAuto: false,
+                        timer: 3000,
+                        })
+                        return{...state}
                 }
                 var CPUPokemon=state.pokemones[Math.floor(((Math.random())*150)%150)]
-                if(state.player2Pokemons.includes(CPUPokemon)){
-                    CPUPokemon.order=250+Math.random()
+                while (state.player2Pokemons.includes(CPUPokemon)) {
+                    CPUPokemon=state.pokemones[Math.floor(((Math.random())*150)%150)]
                 }
+                
                 var attacks;            
                 if(newPokemon.moves.length<5){
                         attacks=newPokemon.moves

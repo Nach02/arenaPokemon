@@ -2,11 +2,12 @@ import './cards.css'
 import React from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { selectPokemon } from '../../../Redux/Actions'
+import Swal from 'sweetalert';
 function Card(props){
     var dispatch=useDispatch()
     var eleccion=useSelector((state)=>state.player1Pokemons)
     function select(e){
-        dispatch(selectPokemon(e.target.id))
+            dispatch(selectPokemon(e.target.id))
     }
     return ( 
         <div id={props.name}className={props.class}onClick={(e)=>select(e)} >

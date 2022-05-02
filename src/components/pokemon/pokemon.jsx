@@ -186,6 +186,7 @@ function Pokemon(props){
         var efecto
         var damage=a.power;
         var type=a.type;
+        if(detalles.hp>0){
         if(damage===null){
             damage=5
         }else{damage=damage/10}           
@@ -288,7 +289,10 @@ function Pokemon(props){
                   [icono]=document.getElementsByClassName('swal-icon')
               icono.style.height="150px"
             },2000)
-            if((state.player1.hp-damage)<1){                 
+            if((state.player1.hp-damage)<1){     
+                var pokemonCount= player1Pokemons.filter((p)=>p.hp>0)
+                console.log(pokemonCount)
+                if(pokemonCount.length>1){
                 setTimeout(()=>{
                     alertaShow[0].style.backgroundColor="rgba(255,255,255)" 
                     Swal({
@@ -298,6 +302,22 @@ function Pokemon(props){
                     heightAuto: false,
                     timer: 3000,
                   })},6000)
+                }else{
+                    setTimeout(()=>{
+                        alertaShow[0].style.backgroundColor="rgba(255,255,255)" 
+                    Swal({
+                        icon: "warning",
+                        title: `${state.player1.name}can not continue battle and Player 1 has no more Pokemon's to battle! Player 2 you are the WINER!!!`,
+                        button: true,
+                        heightAuto: false,
+                        closeOnClickOutside:false
+                      }).then((result) => {
+                        if (result=== true) {
+                            document.location.reload(true)
+                        }
+                        })
+                    },6000)
+                }
             }                            
             },6000) 
         }else{         
@@ -325,6 +345,7 @@ function Pokemon(props){
                     title: `${state.player2.name}can not continue battle and Player 2 has no more Pokemon's to battle! Player 1 you are the WINER!!!`,
                     button: true,
                     heightAuto: false,
+                    closeOnClickOutside:false
                   }).then((result) => {
                     if (result=== true) {
                         document.location.reload(true)
@@ -332,7 +353,15 @@ function Pokemon(props){
                     })
             },10000)                 
             }
-         }    
+         }    }
+         else{
+            Swal({
+                icon: "error",
+                title: `${state.player1.name}can not continue battle please Player 1 select another pokemon`,
+                button: true,
+                heightAuto: false,
+              })
+         }
     }
     function salir(){
         document.location.reload(true)
