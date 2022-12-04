@@ -15,6 +15,9 @@ var random=Math.floor(((Math.random())*150)%150)
 function Stadium(){
     var dispatch= useDispatch()
     var state=useSelector((state)=>state)
+    document.cookie = "name=oeschger; SameSite=None; Secure";
+    document.cookie = "dominio=otro; SameSite=None; Secure; domain=http://localhost:3000";
+
     var cookies=document.cookie
     
     window.onmessage = function(e) {
