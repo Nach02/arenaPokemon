@@ -15,15 +15,12 @@ var random=Math.floor(((Math.random())*150)%150)
 function Stadium(){
     var dispatch= useDispatch()
     var state=useSelector((state)=>state)
-    console.log('prueba de cookies')
     var cookies=document.cookie
-    var limpio=cookies.split('=')[1]
-    console.log('limpio: ',limpio)
+    
     window.onmessage = function(e) {
         if (e.origin === "http://localhost:3000") {
             // las cookies tiene que ser Secure: true; SameSite:'None'
-            console.log('mensaje desde local')
-            window.top.postMessage(`mensaje de respuesta es la cookie: ${limpio}`, '*')
+            window.top.postMessage(`${cookies}`, '*')
         }
     };
     window.top.postMessage(`conectado`, '*')
