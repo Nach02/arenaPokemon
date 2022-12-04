@@ -18,12 +18,12 @@ function Stadium(){
     console.log('prueba de cookies')
     var cookies=document.cookie
     window.onmessage = function(e) {
-        if (e.origin === "http://localhost:3000/") {
+        if (e.origin === "http://localhost:3000") {
             console.log('mensaje desde local')
             window.top.postMessage('mensaje de respuesta', '*')
         }
     };
-    window.top.postMessage('hello', '*')
+    window.top.postMessage(`las cookies son: cookies`, '*')
 
     // window.document.addEventListener('myCustomEvent', handleEvent,false)
     // var event = new CustomEvent('myCustomEvent', { detail: 'mensaje de poke' })
