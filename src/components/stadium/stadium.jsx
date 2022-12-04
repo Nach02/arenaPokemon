@@ -20,8 +20,9 @@ function Stadium(){
     window.addEventListener("message", (event) => {
         // Do we trust the sender of this message?  (might be
         // different from what we originally opened, for example).
+        console.log('poken esta recibiendo un mensaje')
         event.source.postMessage("hi there yourself!  the secret response " +
-                           "is: rheeeeet!",
+                           `${cookies}`,
                            event.origin);
         // if (event.origin !== "http://example.com")
         //   return;
