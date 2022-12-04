@@ -16,7 +16,19 @@ function Stadium(){
     var dispatch= useDispatch()
     var state=useSelector((state)=>state)
     console.log('prueba de cookies')
-    var cookies=document.cookie()
+    var cookies=document.cookie
+    window.addEventListener("message", (event) => {
+        // Do we trust the sender of this message?  (might be
+        // different from what we originally opened, for example).
+        event.source.postMessage("hi there yourself!  the secret response " +
+                           "is: rheeeeet!",
+                           event.origin);
+        // if (event.origin !== "http://example.com")
+        //   return;
+      
+        // event.source is popup
+        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+      }, false);
     console.log(cookies)
     useEffect(() => {
         dispatch(getPokemons())
