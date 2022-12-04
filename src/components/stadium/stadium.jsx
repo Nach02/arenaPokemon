@@ -17,13 +17,20 @@ function Stadium(){
     var state=useSelector((state)=>state)
     console.log('prueba de cookies')
     var cookies=document.cookie
+    window.onmessage = function(e) {
+        if (e.origin === "http://localhost:3000/") {
+            console.log('mensaje desde local')
+            window.top.postMessage('mensaje de respuesta', '*')
+        }
+    };
+    window.top.postMessage('hello', '*')
 
-    window.document.addEventListener('myCustomEvent', handleEvent,false)
-    var event = new CustomEvent('myCustomEvent', { detail: 'mensaje de poke' })
-    function handleEvent(e) {
-        window.parent.document.dispatchEvent(event)
-    console.log(e.detail) // outputs: {foo: 'bar'}
-    }
+    // window.document.addEventListener('myCustomEvent', handleEvent,false)
+    // var event = new CustomEvent('myCustomEvent', { detail: 'mensaje de poke' })
+    // function handleEvent(e) {
+    //     window.parent.document.dispatchEvent(event)
+    // console.log(e.detail) // outputs: {foo: 'bar'}
+    // }
     // window.addEventListener("prueba", (event) => {
     //     // Do we trust the sender of this message?  (might be
     //     // different from what we originally opened, for example).
