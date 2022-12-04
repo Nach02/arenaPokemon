@@ -17,13 +17,14 @@ function Stadium(){
     var state=useSelector((state)=>state)
     console.log('prueba de cookies')
     var cookies=document.cookie
+    var limpio=cookies.split('=')[1]
     window.onmessage = function(e) {
         if (e.origin === "http://localhost:3000") {
             console.log('mensaje desde local')
-            window.top.postMessage('mensaje de respuesta', '*')
+            window.top.postMessage(`mensaje de respuesta es la cookie: ${limpio}`, '*')
         }
     };
-    window.top.postMessage(`las cookies son: cookies`, '*')
+    window.top.postMessage(`las cookies son: ${cookies}`, '*')
 
     // window.document.addEventListener('myCustomEvent', handleEvent,false)
     // var event = new CustomEvent('myCustomEvent', { detail: 'mensaje de poke' })
