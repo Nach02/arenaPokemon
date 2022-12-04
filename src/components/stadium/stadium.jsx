@@ -17,13 +17,21 @@ function Stadium(){
     var state=useSelector((state)=>state)
     console.log('prueba de cookies')
     var cookies=document.cookie
-    window.addEventListener("message", (event) => {
+    window.addEventListener("prueba", (event) => {
         // Do we trust the sender of this message?  (might be
         // different from what we originally opened, for example).
         console.log('poken esta recibiendo un mensaje')
-        event.source.postMessage("hi there yourself!  the secret response " +
-                           `${cookies}`,
-                           event.origin);
+        console.log(event)
+        event.source.dispatchEvent(new CustomEvent("prueba", {
+            bubbles: true,
+            detail: {
+              secret: "Manz",
+              cookie: cookies
+            }
+          }));
+        // event.source.postMessage("hi there yourself!  the secret response " +
+        //                    `${cookies}`,
+        //                    event.origin);
         // if (event.origin !== "http://example.com")
         //   return;
       
