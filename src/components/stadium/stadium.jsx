@@ -15,6 +15,9 @@ var random=Math.floor(((Math.random())*150)%150)
 function Stadium(){
     var dispatch= useDispatch()
     var state=useSelector((state)=>state)
+    console.log('prueba de cookies')
+    var cookies=document.cookie()
+    console.log(cookies)
     useEffect(() => {
         dispatch(getPokemons())
     }, []);
