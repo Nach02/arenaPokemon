@@ -17,27 +17,34 @@ function Stadium(){
     var state=useSelector((state)=>state)
     console.log('prueba de cookies')
     var cookies=document.cookie
-    window.addEventListener("prueba", (event) => {
-        // Do we trust the sender of this message?  (might be
-        // different from what we originally opened, for example).
-        console.log('poken esta recibiendo un mensaje')
-        console.log(event)
-        event.source.dispatchEvent(new CustomEvent("prueba", {
-            bubbles: true,
-            detail: {
-              secret: "Manz",
-              cookie: cookies
-            }
-          }));
-        // event.source.postMessage("hi there yourself!  the secret response " +
-        //                    `${cookies}`,
-        //                    event.origin);
-        // if (event.origin !== "http://example.com")
-        //   return;
+
+    window.document.addEventListener('myCustomEvent', handleEvent,false)
+    var event = new CustomEvent('myCustomEvent', { detail: 'mensaje de poke' })
+    function handleEvent(e) {
+        window.parent.document.dispatchEvent(event)
+    console.log(e.detail) // outputs: {foo: 'bar'}
+    }
+    // window.addEventListener("prueba", (event) => {
+    //     // Do we trust the sender of this message?  (might be
+    //     // different from what we originally opened, for example).
+    //     console.log('poken esta recibiendo un mensaje')
+    //     console.log(event)
+    //     event.source.dispatchEvent(new CustomEvent("prueba", {
+    //         bubbles: true,
+    //         detail: {
+    //           secret: "Manz",
+    //           cookie: cookies
+    //         }
+    //       }));
+    //     // event.source.postMessage("hi there yourself!  the secret response " +
+    //     //                    `${cookies}`,
+    //     //                    event.origin);
+    //     // if (event.origin !== "http://example.com")
+    //     //   return;
       
-        // event.source is popup
-        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
-      }, false);
+    //     // event.source is popup
+    //     // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+    //   }, false);
     console.log(cookies)
     useEffect(() => {
         dispatch(getPokemons())
