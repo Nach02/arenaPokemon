@@ -9,6 +9,7 @@ import Turns from "../turns/turns";
 import Carrusell from "../carrusell/carrusell";
 import Seleccion from "./seleccion/seleccion";
 import estadio1 from '../../img/estadio1.jpg'
+import { getCookies, setCookie } from "./cookies";
 
 var random=Math.floor(((Math.random())*150)%150)
 
@@ -17,35 +18,33 @@ function Stadium(){
     var state=useSelector((state)=>state)
     if (typeof window !== 'undefined') {
         // las cookies tiene que ser Secure: true; SameSite:'None'
-        document.cookie = 'token=es un token; SameSite=None; Secure';
-        document.cookie = 'cartToken=es un cartToken; SameSite=None; Secure';
+        setCookie('token', 'es un token')
+        setCookie('cartToken','es un cartToken')
     
         window.onmessage = function (e) {
-            console.log('mensaje lega a poke',e);
           if (e.origin === 'http://localhost:3000') {
-            console.log('mensjae:', e.data)
             // TODO cambiar por URL permitidas
             const data = JSON.parse(e.data);
             const cookies = document.cookie.split('; ');
             if (data.title === 'getToken') {
-              const  token  = cookies.filter((c)=>c.split('=')[0]==='token')
+              const  {token}  = getCookies()
               window.top.postMessage(
                 JSON.stringify({ title: 'token', info: `${token}` }),
                 '*' // TODO cambiar por URL permitidas
               );
             }
             if (data.title === 'getCartToken') {
-                const  cartToken  = cookies.filter((c)=>c.split('=')[0]==='cartToken')
+                const  {cartToken}  = getCookies();
               window.top.postMessage(
                 JSON.stringify({ title: 'cartToken', info: `${cartToken}` }),
                 '*' // TODO cambiar por URL permitidas
               );
             }
             if (data.title === 'setToken') {
-              document.cookie = `token=${data.info}; SameSite=None; Secure`;
+                setCookie('token',data.info)
             }
             if (data.title === 'setCartToken') {
-              document.cookie = `cartToken=${data.info}; SameSite=None; Secure`;
+                setCookie('cartToken',data.info)
             }
           }
         };
