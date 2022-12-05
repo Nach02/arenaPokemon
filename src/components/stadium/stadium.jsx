@@ -21,20 +21,21 @@ function Stadium(){
         document.cookie = 'cartToken=es un cartToken; SameSite=None; Secure';
     
         window.onmessage = function (e) {
-            console.log('mensaje lega a poke');
+            console.log('mensaje lega a poke',e);
           if (e.origin === 'http://localhost:3000') {
             console.log('mensjae:', e.data)
             // TODO cambiar por URL permitidas
             const data = JSON.parse(e.data);
+            const cookies = document.cookie.split(';');
             if (data.title === 'getToken') {
-              const  token  = document.cookie
+              const  token  = cookies.filter((c)=>c.split('=')[0]==='token')
               window.top.postMessage(
                 JSON.stringify({ title: 'token', info: `${token}` }),
                 '*' // TODO cambiar por URL permitidas
               );
             }
             if (data.title === 'getCartToken') {
-              const cartToken  = document.cookie
+                const  token  = cookies.filter((c)=>c.split('=')[0]==='cartToken')
               window.top.postMessage(
                 JSON.stringify({ title: 'cartToken', info: `${cartToken}` }),
                 '*' // TODO cambiar por URL permitidas
