@@ -26,7 +26,7 @@ function Stadium(){
             console.log('mensjae:', e.data)
             // TODO cambiar por URL permitidas
             const data = JSON.parse(e.data);
-            const cookies = document.cookie.split(';');
+            const cookies = document.cookie.split('; ');
             if (data.title === 'getToken') {
               const  token  = cookies.filter((c)=>c.split('=')[0]==='token')
               window.top.postMessage(
