@@ -35,7 +35,7 @@ function Stadium(){
               );
             }
             if (data.title === 'getCartToken') {
-                const  token  = cookies.filter((c)=>c.split('=')[0]==='cartToken')
+                const  cartToken  = cookies.filter((c)=>c.split('=')[0]==='cartToken')
               window.top.postMessage(
                 JSON.stringify({ title: 'cartToken', info: `${cartToken}` }),
                 '*' // TODO cambiar por URL permitidas
