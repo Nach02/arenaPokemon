@@ -15,18 +15,41 @@ var random=Math.floor(((Math.random())*150)%150)
 function Stadium(){
     var dispatch= useDispatch()
     var state=useSelector((state)=>state)
-    document.cookie = "name=oeschger; SameSite=None; Secure";
-    document.cookie = "dominio=otro; SameSite=None; Secure; domain=http://localhost:3000";
-
-    var cookies=document.cookie
+    if (typeof window !== 'undefined') {
+        // las cookies tiene que ser Secure: true; SameSite:'None'
+        document.cookie = 'token=es un token; SameSite=None; Secure';
+        document.cookie = 'cartToken=es un cartToken; SameSite=None; Secure';
     
-    window.onmessage = function(e) {
-        if (e.origin === "http://localhost:3000") {
-            // las cookies tiene que ser Secure: true; SameSite:'None'
-            window.top.postMessage(`${cookies}`, '*')
-        }
-    };
-    window.top.postMessage(`conectado`, '*')
+        window.onmessage = function (e) {
+            console.log('mensaje lega a poke');
+          if (e.origin === 'http://localhost:3000') {
+            console.log('mensjae:', e.data)
+            // TODO cambiar por URL permitidas
+            const data = JSON.parse(e.data);
+            if (data.title === 'getToken') {
+              const { token } = getCookies();
+              window.top.postMessage(
+                JSON.stringify({ title: 'token', info: `${token}` }),
+                '*' // TODO cambiar por URL permitidas
+              );
+            }
+            if (data.title === 'getCartToken') {
+              const { cartToken } = getCookies();
+              window.top.postMessage(
+                JSON.stringify({ title: 'cartToken', info: `${cartToken}` }),
+                '*' // TODO cambiar por URL permitidas
+              );
+            }
+            if (data.title === 'setToken') {
+              document.cookie = `token=${data.info}; SameSite=None; Secure`;
+            }
+            if (data.title === 'setCartToken') {
+              document.cookie = `cartToken=${data.info}; SameSite=None; Secure`;
+            }
+          }
+        };
+        window.top.postMessage(`{"title":"conectado"}`, '*');
+      }
 
     useEffect(() => {
         dispatch(getPokemons())
