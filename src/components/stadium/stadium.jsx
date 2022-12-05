@@ -27,14 +27,14 @@ function Stadium(){
             // TODO cambiar por URL permitidas
             const data = JSON.parse(e.data);
             if (data.title === 'getToken') {
-              const { token } = getCookies();
+              const  token  = document.cookie
               window.top.postMessage(
                 JSON.stringify({ title: 'token', info: `${token}` }),
                 '*' // TODO cambiar por URL permitidas
               );
             }
             if (data.title === 'getCartToken') {
-              const { cartToken } = getCookies();
+              const cartToken  = document.cookie
               window.top.postMessage(
                 JSON.stringify({ title: 'cartToken', info: `${cartToken}` }),
                 '*' // TODO cambiar por URL permitidas
