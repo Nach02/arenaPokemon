@@ -18,11 +18,11 @@ function Stadium(){
     var state=useSelector((state)=>state)
     if (typeof window !== 'undefined') {
         // las cookies tiene que ser Secure: true; SameSite:'None'
-        setCookie('token', 'es un token')
-        setCookie('cartToken','es un cartToken')
+        // setCookie('token', 'es un token')
+        // setCookie('cartToken','es un cartToken')
     
         window.onmessage = function (e) {
-          if (e.origin === 'http://localhost:3000') {
+          if (e.origin === 'https://front-main-staging.zapapla.com') {
             // TODO cambiar por URL permitidas
             const data = JSON.parse(e.data);
             const cookies = document.cookie.split('; ');
